@@ -112,9 +112,8 @@ resource "google_compute_health_check" "health_check_public" {
   unhealthy_threshold = 2
   healthy_threshold   = 2
   http_health_check {
-    port_name          = "my-awesome-app-port"
-    port_specification = "USE_NAMED_PORT"
-    request_path       = "/"
+    port         = "8080"
+    request_path = "/"
   }
 }
 
