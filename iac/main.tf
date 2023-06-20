@@ -95,7 +95,7 @@ resource "google_compute_backend_service" "backend_service_public" {
   load_balancing_scheme = "EXTERNAL_MANAGED"
   timeout_sec           = 10
   enable_cdn            = false
-  health_checks         = [google_compute_http_health_check.health_check_public.id]
+  health_checks         = [google_compute_health_check.health_check_public.id]
   backend {
     group           = google_compute_region_instance_group_manager.mig_public.instance_group
     balancing_mode  = "UTILIZATION"
