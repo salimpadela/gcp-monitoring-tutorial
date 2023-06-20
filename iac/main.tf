@@ -103,14 +103,19 @@ resource "google_compute_backend_service" "backend_service_public" {
   }
 }
 
-resource "google_compute_http_health_check" "health_check_public" {
-  name                = "my-awesome-app-load-balancer-hc-public"
-  request_path        = "/"
-  port                = "8080"
+resource "google_compute_health_check" "health_check_public" {
+  name = "my-awesome-app-load-balancer-hc-public"
+  # request_path        = "/"
+  # port                = "8080"
   check_interval_sec  = 1
   timeout_sec         = 1
   unhealthy_threshold = 2
   healthy_threshold   = 2
+  http_health_check {
+    port_name          = "my-awesome-app-port"
+    port_specification = "USE_NAMED_PORT"
+    request_path       = "/"
+  }
 }
 
 resource "google_compute_target_http_proxy" "target_http_proxy_public" {
