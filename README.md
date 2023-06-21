@@ -69,7 +69,7 @@ Execute below commands in CloudShell
   - Type: Tag
   - Tag: app-name
   - Operator: Equals
-  - Value:my-awesome-app
+  - Value: my-awesome-app
 
 ---
 
@@ -108,6 +108,8 @@ Execute below commands in CloudShell
 - Click on Add New next to Email
 - Enter email address and display name
 
+---
+
 ### Create alert for the Uptime check we just created
 
 - Go to Monitoring&rarr;Alerting
@@ -125,10 +127,14 @@ Execute below commands in CloudShell
   - Notification Channels - my email channel
 - Name: my-awesome-app-alert-policy
 
+---
+
 ### Test out our alert policy
 
 - Go to Compute Engine&rarr;VM Instances
 - Select the VM named my-awesome-app-server-public-XXXX and click on STOP
+
+---
 
 ### Clean up
 
